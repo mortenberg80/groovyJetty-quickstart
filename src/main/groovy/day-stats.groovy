@@ -1,7 +1,7 @@
 def day = request.getParameter("day")
 def dayDate
 try {
-    dayDate = Date.parse("yyyy-MM-dd", day)
+    dayDate = Date.parse("yyyyMMdd", day)
 } catch(Exception e) {
     dayDate = new Date();
 }
@@ -9,11 +9,24 @@ try {
 def sakerOpprettet = 
     [
         date: dayDate.format('yyyy-MM-dd'),
-        stats: [
-            [label: 'SAK_OPRETTET', data: 35], 
-            [label: 'SAK_FERDIG', data: 100], 
-            [label: 'OPPLYSNINGER_MOTTATT', data: 67], 
-            [label: 'PURRE_OPPLYSNINGER', data: 33]]
+        behandlet: [
+            [label: 'SAK_OPRETTET', data: 35],
+            [label: 'SAK_FERDIG', data: 100],
+            [label: 'OPPLYSNINGER_MOTTATT', data: 67],
+            [label: 'PURRE_OPPLYSNINGER', data: 33]
+        ],
+        epost: [
+            [label: 'SAK_OPRETTET', data: 35],
+            [label: 'SAK_FERDIG', data: 100],
+            [label: 'OPPLYSNINGER_MOTTATT', data: 67],
+            [label: 'PURRE_OPPLYSNINGER', data: 33]
+        ],
+        sms: [
+            [label: 'SAK_OPRETTET', data: 35],
+            [label: 'SAK_FERDIG', data: 100],
+            [label: 'OPPLYSNINGER_MOTTATT', data: 67],
+            [label: 'PURRE_OPPLYSNINGER', data: 33]
+        ]
     ]
 
 // println "Hei, ${dayDate.format('yyyy-MM-dd')}"

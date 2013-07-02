@@ -27,10 +27,10 @@ $(function() {
                             color: '#000'
                         }
                     }
-                },
-                legend: {
-                    show: false,
                 }
+            },
+            legend: {
+                show: false,
             }
         });
     });
