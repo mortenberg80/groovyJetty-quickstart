@@ -27,7 +27,7 @@ function plotPie(placeholder, data) {
 }
 
 
-function printDayStats(day) {
+function printDaychart(day) {
     $.getJSON("day-stats.groovy?day=" + day, function(data) {
         var behandlet = data["behandlet"]
         var epost = data["epost"]
@@ -37,6 +37,7 @@ function printDayStats(day) {
         plotPie("#epostDag", epost)
         plotPie("#smsDag", sms)
     });
+    $('#statsDag').html("Varselfordeling for " + day);
 }
 
 function printBarchart() {
@@ -55,9 +56,10 @@ function printBarchart() {
 $(document).on('click', '.datorad', function() {
     var datoString = $(this).find('td.dato').html();
     var datoParts = datoString.split('-');
-    printDayStats(datoParts[0] + datoParts[1] + datoParts[2]);
+    printDaychart(datoParts[0] + datoParts[1] + datoParts[2]);
 });
 
 $(function() {
     printBarchart();
+    printDaychart("20130603");
 });
